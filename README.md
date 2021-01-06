@@ -1,3 +1,3 @@
 # govindanand.github.io
 
-Personal website for Vin Anand. Access here: govindanand.github.io
+Access personal website here, [Vin Anand](govindanand.github.io)
