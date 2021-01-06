@@ -1,3 +1,3 @@
 # govindanand.github.io
 
-Access personal website here, [Vin Anand](govindanand.github.io)
+Access personal website here, [Vin Anand](https://govindanand.github.io)
