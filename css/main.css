@@ -13,6 +13,7 @@ nav ul li, footer ul li {
     margin-right: 20px;
 }
 a {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
     text-decoration: none;
     color: #999;
 }
@@ -30,6 +31,7 @@ heading {
 }
 
 p {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.4em;
     color: #333;
