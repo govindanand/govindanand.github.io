@@ -24,9 +24,9 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-h2 {
-    font-size: 1.5em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+heading {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
 }
 
 p {
@@ -52,4 +52,15 @@ papertitle {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   font-size: 14px;
   font-weight: 700
+}
+
+b {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+b:focus,
+b:hover {
+  color: #f09228;
+  text-decoration: none;
 }
