@@ -51,18 +51,16 @@ ul.posts li {
 papertitle {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   font-size: 14px;
-  font-weight: 700
+  font-weight: 700;
 }
 
 b {
-  color: #1772d0;
-  text-decoration: none;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 12px
+    text-decoration: none;
+    color: #1772d0;
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 12px;
 }
-
-b:focus,
 b:hover {
-  color: #f09228;
-  text-decoration: none;
+    text-decoration: underline;
+    color: #f09228;
 }
