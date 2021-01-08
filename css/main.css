@@ -57,10 +57,19 @@ papertitle {
 b {
   color: #1772d0;
   text-decoration: none;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 12px
 }
 
 b:focus,
 b:hover {
   color: #f09228;
   text-decoration: none;
+}
+
+td,
+th,
+tr {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px
 }
