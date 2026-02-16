@@ -68,3 +68,46 @@ b:hover {
     text-decoration: underline;
     color: #f09228;
 }
+
+/* Modern card styling for projects, publications, research, and investments */
+.content-card {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.content-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+
+.content-card-image {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.content-card-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.content-card-text h3 {
+    margin-top: 0;
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 14px;
+    font-weight: 700;
+    color: #014c7f;
+}
+
+.content-section {
+    max-width: 900px;
+    margin: 40px auto;
+}
