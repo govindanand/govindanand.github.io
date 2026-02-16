@@ -2,7 +2,6 @@ body {
   margin: 60px auto;
   width: 70%;
 }
-
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -25,12 +24,10 @@ h1 {
     font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
 }
-
 p {
     font-family: 'Lato', Verdana, Helvetica, sans-serif;
     font-size: 14px;
@@ -41,22 +38,18 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .5em;
 }
-
 ul.posts {
     margin: 20px auto 40px;
     font-size: 1.8em;
 }
-
 ul.posts li {
     list-style: none;
 }
-
 papertitle {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   font-size: 14px;
   font-weight: 700;
 }
-
 b {
     text-decoration: none;
     color: #014c7f; 
@@ -68,7 +61,6 @@ b:hover {
     text-decoration: underline;
     color: #f09228;
 }
-
 /* Modern card styling for projects, publications, research, and investments */
 .content-card {
     display: flex;
@@ -82,23 +74,19 @@ b:hover {
     text-decoration: none;
     color: inherit;
 }
-
 .content-card:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     text-decoration: none;
 }
-
 .content-card-image {
     width: 250px;
     flex-shrink: 0;
 }
-
 .content-card-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
-
 .content-card-text h3 {
     margin-top: 0;
     font-family: 'Helvetica', 'Arial', 'Sans-Serif';
@@ -106,17 +94,16 @@ b:hover {
     font-weight: 700;
     color: #014c7f;
 }
-
 .content-section {
     max-width: 900px;
     margin: 40px auto;
 }
-
-/* Specific color for Capital One Ventures link */
+/* Specific color for Capital One Ventures link - MUST be at the end */
 a.cov-link {
-    color: #3AAFA9;
+    color: #3AAFA9 !important;
+    text-decoration: none;
 }
-
 a.cov-link:hover {
-    color: #2B8A85; /* Slightly darker on hover, optional */
+    color: #2B8A85 !important;
+    text-decoration: underline;
 }
