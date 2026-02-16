@@ -111,3 +111,12 @@ b:hover {
     max-width: 900px;
     margin: 40px auto;
 }
+
+/* Specific color for Capital One Ventures link */
+a.cov-link {
+    color: #3AAFA9;
+}
+
+a.cov-link:hover {
+    color: #2B8A85; /* Slightly darker on hover, optional */
+}
