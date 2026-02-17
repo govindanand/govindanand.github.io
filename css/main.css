@@ -107,3 +107,36 @@ a.cov-link:hover {
     color: #2B8A85 !important;
     text-decoration: underline;
 }
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    body {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    /* Make tables stack on mobile */
+    table, tbody, tr, td {
+        display: block;
+        width: 100% !important;
+    }
+    
+    /* Center images on mobile */
+    td img {
+        width: 100% !important;
+        max-width: 250px !important;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* Adjust padding on mobile */
+    td {
+        padding: 10px !important;
+    }
+    
+    /* Make navigation stack vertically */
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
