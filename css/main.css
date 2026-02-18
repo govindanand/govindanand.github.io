@@ -191,4 +191,18 @@ a.cov-link:hover {
         width: 100%;
         margin: 20px 0;
     }
+    
+    /* Center the profile image specifically on home page */
+    a[href="images/profile.jpeg"] {
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    a[href="images/profile.jpeg"] img {
+        width: 60% !important;
+        max-width: 200px !important;
+        margin: 20px auto !important;
+        display: block !important;
+        border-radius: 50% !important;
+    }
 }
