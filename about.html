@@ -164,6 +164,12 @@
       padding: 1.5rem;
       margin-bottom: 1rem;
       transition: border-color 0.15s, box-shadow 0.15s;
+      min-height: 80px;
+      cursor: pointer;
+    }
+
+    .entry-card:empty {
+      display: none;
     }
 
     .entry-card:hover {
@@ -173,7 +179,7 @@
 
     .entry-inner {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 240px 1fr;
       gap: 1.5rem;
       align-items: center;
     }
@@ -191,7 +197,14 @@
       overflow: hidden;
     }
 
-    .entry-media img,
+    .entry-media img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
     .entry-media video {
       width: 100%;
       height: auto;
@@ -304,7 +317,7 @@
         <div class="section-rule"></div>
       </div>
 
-      <a class="entry-card" href="/files/pacman.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/pacman.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <video autoplay loop muted playsinline>
@@ -317,9 +330,9 @@
             <a class="entry-link" href="https://web.archive.org/web/20191114124101/https://inst.eecs.berkeley.edu/~cs188/fa19/project3/" target="_blank" onclick="event.stopPropagation()">CS 188</a>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="entry-card" href="/files/recycle.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/recycle.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/recycle.png" alt="Recycle.ai">
@@ -330,9 +343,9 @@
             <a class="entry-link" href="/videos/recycle.mp4" target="_blank" onclick="event.stopPropagation()">Demo</a>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="entry-card" href="/files/aurdr.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/aurdr.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/aurdr.png" alt="Aurdr">
@@ -343,7 +356,7 @@
             <a class="entry-link" href="https://www.thechurchillobserver.com/top-stories/2016/04/22/new-app-makes-online-shopping-simple-for-chs-students/" target="_blank" onclick="event.stopPropagation()">Newsletter</a>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- ── PUBLICATIONS ── -->
@@ -353,7 +366,7 @@
         <div class="section-rule"></div>
       </div>
 
-      <a class="entry-card" href="/files/patent.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/patent.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/patent.png" alt="Patent">
@@ -364,9 +377,9 @@
             <a class="entry-link" href="https://patentcenter.uspto.gov/applications/18317898" target="_blank" onclick="event.stopPropagation()">USPTO</a>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="entry-card" href="/files/thunberg.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/thunberg.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/scet.png" alt="SCET Leader Studio">
@@ -377,7 +390,7 @@
             <a class="entry-link" href="https://leaderstudio.berkeley.edu" target="_blank" onclick="event.stopPropagation()">SCET Leader Studio</a>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- ── RESEARCH ── -->
@@ -387,7 +400,7 @@
         <div class="section-rule"></div>
       </div>
 
-      <a class="entry-card" href="/files/nucleationLab.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/nucleationLab.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/nucleation.png" alt="Nucleation study">
@@ -398,9 +411,9 @@
             <a class="entry-link" href="https://nano.eecs.berkeley.edu/research/" target="_blank" onclick="event.stopPropagation()">Javey Research Group</a>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="entry-card" href="/files/jhu1.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/jhu1.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/jhu1.png" alt="JHU nanoparticles">
@@ -411,9 +424,9 @@
             <a class="entry-link" href="https://inbt.jhu.edu/" target="_blank" onclick="event.stopPropagation()">JHU INBT</a>
           </div>
         </div>
-      </a>
+      </div>
 
-      <a class="entry-card" href="/files/cnmc.pdf" target="_blank">
+      <div class="entry-card" onclick="window.open('/files/cnmc.pdf','_blank')">
         <div class="entry-inner">
           <div class="entry-media">
             <img src="/images/cnmc.png" alt="Prussian Blue nanoparticles">
@@ -424,7 +437,7 @@
             <a class="entry-link" href="https://childrensnational.org/research-and-education/sheikh-zayed" target="_blank" onclick="event.stopPropagation()">Children's National Medical Center</a>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
   </main>
@@ -432,11 +445,6 @@
   <footer>
     <span class="footer-left">govindanand.github.io</span>
     <ul class="footer-links">
-      <li><a href="mailto:vinanand.va@gmail.com">Email</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#12647b7c737c737c763c647352757f737b7e3c717d7f">Email</a></li>
       <li><a href="https://www.linkedin.com/in/vinanand/" target="_blank">LinkedIn</a></li>
-      <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a></li>
-    </ul>
-  </footer>
-
-</body>
-</html>
+      <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a><
