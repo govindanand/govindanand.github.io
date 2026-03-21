@@ -393,20 +393,20 @@
         </div>
         <h2>Tap 2 Verify</h2>
         <p class="role-blurb">
-          Led product for a frictionless in-app identity verification flow enabling customers to confirm sensitive actions with a single tap. Replaced legacy SMS OTP with a native biometric + device-token pattern, dramatically reducing drop-off during high-stakes moments like credit limit increases and new card activations.
+          Led identity verification for Capital One's Online Account Opening flow, replacing the multi-day Government ID process with a real-time tap-to-verify experience. Applicants confirm their identity via SMS link on their mobile device, eliminating friction for the 85k+ applicants per year previously routed to manual review and driving incremental account bookings at scale.
         </p>
         <div class="metrics">
           <div class="metric-cell">
-            <span class="metric-value">↓ 34%</span>
-            <span class="metric-label">verification drop-off</span>
+            <span class="metric-value">3k</span>
+            <span class="metric-label">new accounts booked / month</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">~2s</span>
-            <span class="metric-label">median completion time</span>
+            <span class="metric-value">7k</span>
+            <span class="metric-label">fewer manual reviews / month</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">100M+</span>
-            <span class="metric-label">customers reached</span>
+            <span class="metric-value">$2.4M</span>
+            <span class="metric-label">realized NPV in 2022</span>
           </div>
         </div>
       </div>
@@ -436,20 +436,20 @@
         </div>
         <h2>Versioning</h2>
         <p class="role-blurb">
-          Built end-to-end model versioning for Capital One's AI/ML Platform, enabling data scientists to register, compare, and promote model artifacts across environments with full audit trails. Introduced semantic versioning semantics into the model lifecycle — reducing deployment incidents from stale artifact references and enabling safe rollback.
+          Eliminated a key blocker to feature reuse on Capital One's ML Exchange. Data scientists were hacking version suffixes onto feature names, flooding the platform with near-duplicates and making reuse too risky. Introduced the first standardized versioning policy for data products, with automated change classification, tiered review flows, and a full audit trail that became the template for platform-wide data product lifecycle governance.
         </p>
         <div class="metrics">
           <div class="metric-cell">
+            <span class="metric-value">6x</span>
+            <span class="metric-label">increase in feature reuse</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-value">5% → 30%</span>
+            <span class="metric-label">reuse rate</span>
+          </div>
+          <div class="metric-cell">
             <span class="metric-value">0 → 1</span>
-            <span class="metric-label">net new capability</span>
-          </div>
-          <div class="metric-cell">
-            <span class="metric-value">↓ 60%</span>
-            <span class="metric-label">deployment incidents</span>
-          </div>
-          <div class="metric-cell">
-            <span class="metric-value">500+</span>
-            <span class="metric-label">models under version control</span>
+            <span class="metric-label">platform versioning standard</span>
           </div>
         </div>
       </div>
@@ -479,20 +479,20 @@
         </div>
         <h2>Lineage</h2>
         <p class="role-blurb">
-          Designed a visual data lineage graph that traces feature provenance from raw source tables through transformation pipelines to model inputs. Gives data scientists and compliance teams a single-pane view of upstream dependencies — critical for model explainability, impact analysis, and regulatory audits under SR 11-7.
+          Built Feature Lineage to document the full lifecycle of data from origination through to model use, tracking both dataset-level flow and element-level field transformations across pipelines. Gave data scientists instant visibility into where features came from and how they were computed, enabling faster knowledge transfer, safer feature reuse, and audit-ready documentation for compliance requests.
         </p>
         <div class="metrics">
           <div class="metric-cell">
-            <span class="metric-value">↓ 3 days</span>
-            <span class="metric-label">avg. audit response time</span>
+            <span class="metric-value">Field-level</span>
+            <span class="metric-label">transformation tracking</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">1,200+</span>
-            <span class="metric-label">features mapped</span>
+            <span class="metric-value">Faster</span>
+            <span class="metric-label">audit response times</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">SR 11-7</span>
-            <span class="metric-label">compliance coverage</span>
+            <span class="metric-value">0 → 1</span>
+            <span class="metric-label">enterprise lineage standard</span>
           </div>
         </div>
       </div>
@@ -522,20 +522,20 @@
         </div>
         <h2>Personalization Tiles</h2>
         <p class="role-blurb">
-          Owned the product surface for dynamically ranked homepage tiles that surface contextually relevant offers, alerts, and actions for each customer. Powered by real-time ML scoring against behavioral and transactional signals, the tile ranking engine serves personalized content to every Capital One mobile app session — without manual merchandising.
+          Integrated event-based capabilities for Capital One's Feed recommender model, powering personalized tile ranking for millions of customers. Built an event-driven engine to update personalization features capturing customer tile history, engagement signals (accept, like, dislike, dismiss, postpone), and batch interaction counts, enabling the model to surface the right offers and actions to each customer at the right moment.
         </p>
         <div class="metrics">
           <div class="metric-cell">
-            <span class="metric-value">↑ 22%</span>
-            <span class="metric-label">tile engagement rate</span>
+            <span class="metric-value">Real-time</span>
+            <span class="metric-label">feature serving</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">Real-time</span>
-            <span class="metric-label">ML-driven ranking</span>
+            <span class="metric-value">6 signals</span>
+            <span class="metric-label">engagement types tracked</span>
           </div>
           <div class="metric-cell">
             <span class="metric-value">100M+</span>
-            <span class="metric-label">sessions served monthly</span>
+            <span class="metric-label">customers served</span>
           </div>
         </div>
       </div>
@@ -547,15 +547,11 @@
 <footer>
   <span class="footer-left">govindanand.github.io</span>
   <ul class="footer-links">
-    <li><a href="mailto:vinanand.va@gmail.com">Email</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#9bedf2f5faf5faf5ffb5edfadbfcf6faf2f7b5f8f4f6">Email</a></li>
     <li><a href="https://www.linkedin.com/in/vinanand/" target="_blank">LinkedIn</a></li>
     <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a></li>
   </ul>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const buttons = document.querySelectorAll('.tab-btn');
-  const panels  = document.querySelectorAll('.tab-panel');
-
-  buttons.forEach(btn => {
-    btn.addEven
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const
