@@ -17,9 +17,6 @@
       --text-primary: #1a1917;
       --text-secondary: #6b6860;
       --text-muted: #a09d97;
-      --accent: #1a1917;
-      --accent-pill: #1a1917;
-      --pill-text: #f9f8f5;
       --tag-bg: #f0ede6;
       --tag-text: #4a4845;
       --font: 'DM Sans', sans-serif;
@@ -33,7 +30,6 @@
       min-height: 100vh;
     }
 
-    /* ── NAV ── */
     nav {
       display: flex;
       align-items: center;
@@ -72,7 +68,6 @@
       color: var(--text-primary);
     }
 
-    /* ── HERO ── */
     .hero {
       padding: 4rem 2.5rem 2.5rem;
       max-width: 900px;
@@ -109,7 +104,6 @@
       line-height: 1.65;
     }
 
-    /* ── TABS ── */
     .tabs-wrapper {
       max-width: 900px;
       margin: 0 auto;
@@ -118,9 +112,7 @@
 
     .tab-list {
       display: flex;
-      gap: 0;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 0;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -150,7 +142,6 @@
       border-bottom-color: var(--text-primary);
     }
 
-    /* ── PANEL ── */
     .tab-panel {
       display: none;
       padding: 2.5rem 0 0;
@@ -164,7 +155,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── PRODUCT LAYOUT ── */
     .product-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -176,7 +166,6 @@
       .product-grid { grid-template-columns: 1fr; }
     }
 
-    /* Media block */
     .media-block {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -190,47 +179,23 @@
     .media-block video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
     }
 
-    /* placeholder state */
-    .media-placeholder {
+    .media-empty {
       width: 100%;
       height: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       background: var(--tag-bg);
-    }
-
-    .media-placeholder-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--border-strong);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .media-placeholder-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--text-muted);
-      fill: none;
-    }
-
-    .media-placeholder span {
       font-family: var(--mono);
       font-size: 11px;
       color: var(--text-muted);
       letter-spacing: 0.04em;
     }
 
-    /* Info block */
     .info-block {
       display: flex;
       flex-direction: column;
@@ -275,7 +240,6 @@
       line-height: 1.7;
     }
 
-    /* Metrics */
     .metrics {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -308,7 +272,6 @@
       line-height: 1.3;
     }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 1.5rem 2.5rem;
@@ -355,7 +318,7 @@
 <section class="hero">
   <p class="hero-eyebrow">Product portfolio</p>
   <h1>Things I've <em>built</em> &amp; shipped</h1>
-  <p class="hero-sub">A selection of products from my time on Capital One's AI/ML Platform — from zero-to-one features to scaled infrastructure serving 100M+ customers.</p>
+  <p class="hero-sub">A selection of products from my time on Capital One's AI/ML Platform, from zero-to-one features to scaled infrastructure serving 100M+ customers.</p>
 </section>
 
 <div class="tabs-wrapper">
@@ -367,12 +330,12 @@
     <button class="tab-btn" role="tab" data-tab="tiles">Personalization Tiles</button>
   </div>
 
-  <!-- ── TAP 2 VERIFY ── -->
+  <!-- TAP 2 VERIFY -->
   <div class="tab-panel active" id="tab-tap2verify">
     <div class="product-grid">
-      <img src="/images/T2V.png" alt="Tap 2 Verify" style="width:100%;height:100%;object-fit:contain;display:block;">
+      <div class="media-block">
+        <img src="/images/T2V.png" alt="Tap 2 Verify">
       </div>
-
       <div class="info-block">
         <div class="product-meta">
           <span class="product-tag">Web</span>
@@ -401,21 +364,12 @@
     </div>
   </div>
 
-  <!-- ── VERSIONING ── -->
+  <!-- VERSIONING -->
   <div class="tab-panel" id="tab-versioning">
     <div class="product-grid">
       <div class="media-block">
-        <!--
-          REPLACE with: <img src="assets/versioning.png" alt="Versioning UI" />
-        -->
-        <div class="media-placeholder">
-          <div class="media-placeholder-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <span>drop media here</span>
-        </div>
+        <div class="media-empty">drop media here</div>
       </div>
-
       <div class="info-block">
         <div class="product-meta">
           <span class="product-tag">Platform</span>
@@ -432,11 +386,11 @@
             <span class="metric-label">increase in feature reuse</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">5% → 30%</span>
+            <span class="metric-value">5% to 30%</span>
             <span class="metric-label">reuse rate</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">0 → 1</span>
+            <span class="metric-value">0 to 1</span>
             <span class="metric-label">platform versioning standard</span>
           </div>
         </div>
@@ -444,21 +398,14 @@
     </div>
   </div>
 
-  <!-- ── LINEAGE ── -->
+  <!-- LINEAGE -->
   <div class="tab-panel" id="tab-lineage">
     <div class="product-grid">
       <div class="media-block">
-        <!--
-          REPLACE with: <img src="assets/lineage.png" alt="Lineage graph view" />
-        -->
-        <div class="media-placeholder">
-          <div class="media-placeholder-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <span>drop media here</span>
-        </div>
+        <video autoplay loop muted playsinline>
+          <source src="/videos/lineage.mp4" type="video/mp4">
+        </video>
       </div>
-
       <div class="info-block">
         <div class="product-meta">
           <span class="product-tag">Platform</span>
@@ -479,7 +426,7 @@
             <span class="metric-label">audit response times</span>
           </div>
           <div class="metric-cell">
-            <span class="metric-value">0 → 1</span>
+            <span class="metric-value">0 to 1</span>
             <span class="metric-label">enterprise lineage standard</span>
           </div>
         </div>
@@ -487,21 +434,12 @@
     </div>
   </div>
 
-  <!-- ── PERSONALIZATION TILES ── -->
+  <!-- PERSONALIZATION TILES -->
   <div class="tab-panel" id="tab-tiles">
     <div class="product-grid">
       <div class="media-block">
-        <!--
-          REPLACE with: <img src="assets/tiles.gif" alt="Personalization Tiles demo" />
-        -->
-        <div class="media-placeholder">
-          <div class="media-placeholder-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <span>drop media here</span>
-        </div>
+        <div class="media-empty">drop media here</div>
       </div>
-
       <div class="info-block">
         <div class="product-meta">
           <span class="product-tag">Mobile</span>
@@ -530,7 +468,7 @@
     </div>
   </div>
 
-</div><!-- /.tabs-wrapper -->
+</div>
 
 <footer>
   <span class="footer-left">govindanand.github.io</span>
