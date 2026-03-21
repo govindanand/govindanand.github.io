@@ -6,6 +6,7 @@
   <title>Products — Vin Anand</title>
   <link rel="icon" type="image/png" href="/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -272,6 +273,191 @@
       line-height: 1.3;
     }
 
+    /* ── ALIO TAB STYLES ─────────────────────────────────────── */
+
+    .alio-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Top row: matches product-grid for the intro */
+    .alio-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .alio-intro { grid-template-columns: 1fr; }
+    }
+
+    /* Dark preview card in place of screenshot */
+    .alio-preview {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: #0c0e14;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+    }
+
+    .alio-preview-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+    }
+
+    .alio-preview-sparkline {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 65%;
+      opacity: 0.18;
+    }
+
+    .alio-preview-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .alio-preview-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 8px;
+    }
+
+    .alio-preview-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #e8d5b7;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .alio-preview-sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: #5a5a70;
+    }
+
+    /* Analysis section — full width below intro */
+    .alio-analysis {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .alio-analysis-header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .alio-analysis-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .alio-chart-tabs {
+      display: flex;
+      gap: 2px;
+      background: var(--tag-bg);
+      padding: 3px;
+      border-radius: 6px;
+    }
+
+    .alio-chart-tab {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .alio-chart-tab.active {
+      background: var(--surface);
+      color: var(--text-primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .alio-chart-tab:hover:not(.active) { color: var(--text-secondary); }
+
+    .alio-chart-body {
+      padding: 8px;
+    }
+
+    .alio-chart-panel { display: none; }
+    .alio-chart-panel.active { display: block; }
+
+    /* Stats row inside Alio — uses same metrics style */
+    .alio-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .alio-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .alio-stat {
+      background: var(--bg);
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .alio-stat-value {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .alio-stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    /* Insight callout */
+    .alio-insight {
+      margin: 0 8px 8px;
+      padding: 12px 14px;
+      background: var(--tag-bg);
+      border-left: 2px solid var(--border-strong);
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .alio-insight strong { color: var(--text-primary); font-weight: 500; }
+
     footer {
       border-top: 1px solid var(--border);
       padding: 1.5rem 2.5rem;
@@ -316,7 +502,7 @@
 <section class="hero">
   <p class="hero-eyebrow">Product portfolio</p>
   <h1>Things I've <em>built</em> &amp; shipped</h1>
-  <p class="hero-sub">A selection of products from my time on Capital One's AI/ML Platform and Bank Product teams, from zero-to-one features to scaled infrastructure serving 100M+ customers.</p>
+  <p class="hero-sub">A selection of products from my time on Capital One's AI/ML platform team and the data science research group at Alio, from exploratory research and zero-to-one features to scaled infrastructure serving 100M+ customers.</p>
 </section>
 
 <div class="tabs-wrapper">
@@ -326,6 +512,7 @@
     <button class="tab-btn" role="tab" data-tab="versioning">Versioning</button>
     <button class="tab-btn" role="tab" data-tab="lineage">Lineage</button>
     <button class="tab-btn" role="tab" data-tab="tiles">Personalization Tiles</button>
+    <button class="tab-btn" role="tab" data-tab="alio">Alio</button>
   </div>
 
   <!-- TAP 2 VERIFY -->
@@ -450,7 +637,7 @@
         </div>
         <h2>Personalization Tiles</h2>
         <p class="role-blurb">
-          Created event-based triggers for feature compute to power Capital One's Feed recommender model, powering personalized tile ranking for millions of customers. Enabled personalization features capturing customer engagement signals (accept, like, dislike, dismiss, postpone), and  interaction counts, allowing the model to surface the right offers and actions to each customer at the right moment.
+          Created event-based triggers for feature compute to power Capital One's Feed recommender model, powering personalized tile ranking for millions of customers. Enabled personalization features capturing customer engagement signals (accept, like, dislike, dismiss, postpone), and interaction counts, allowing the model to surface the right offers and actions to each customer at the right moment.
         </p>
         <div class="metrics">
           <div class="metric-cell">
@@ -470,7 +657,135 @@
     </div>
   </div>
 
-</div>
+  <!-- ALIO -->
+  <div class="tab-panel" id="tab-alio">
+    <div class="alio-layout">
+
+      <!-- Intro row: preview card + info block -->
+      <div class="alio-intro">
+
+        <!-- Dark preview card -->
+        <div class="alio-preview">
+          <svg class="alio-preview-grid" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse">
+                <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#c9a96e" stroke-width="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g)"/>
+          </svg>
+          <svg class="alio-preview-sparkline" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,90 40,72 80,80 120,52 160,62 200,35 240,44 280,22 300,28"
+              fill="none" stroke="#7fb3d3" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="0,90 40,72 80,80 120,52 160,62 200,35 240,44 280,22 300,28"
+              fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 4" opacity="0.6"/>
+          </svg>
+          <div class="alio-preview-content">
+            <div class="alio-preview-eyebrow">Alio · 2021</div>
+            <div class="alio-preview-title">Hematocrit Prediction<br>via ML</div>
+            <div class="alio-preview-sub">IR PPG · Random Forest · MongoDB · SageMaker</div>
+          </div>
+        </div>
+
+        <!-- Info block -->
+        <div class="info-block">
+          <div class="product-meta">
+            <span class="product-tag">Data Science</span>
+            <span class="product-tag">Machine Learning</span>
+            <span class="product-tag platform">Healthcare</span>
+          </div>
+          <h2>Hematocrit Prediction Model</h2>
+          <p class="role-blurb">
+            Built a machine learning model to predict blood hematocrit non-invasively from raw PPG sensor data at Alio. The company's wearable SmartPatch uses infrared light to continuously monitor dialysis patients at home. Replaced a heuristic ratio-of-ratios baseline with a random forest regressor trained on AC and DC amplitude features across IR channels — reducing prediction error by 80% and establishing a full pipeline from MongoDB sensor reads through AWS SageMaker.
+          </p>
+          <div class="metrics">
+            <div class="metric-cell">
+              <span class="metric-value">80%</span>
+              <span class="metric-label">error reduction vs. baseline</span>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-value">~1.5</span>
+              <span class="metric-label">MAE (Hct %, 5-fold CV)</span>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-value">11</span>
+              <span class="metric-label">dialysis patients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full-width interactive analysis -->
+      <div class="alio-analysis">
+        <div class="alio-analysis-header">
+          <span class="alio-analysis-title">Interactive Analysis</span>
+          <div class="alio-chart-tabs" role="tablist">
+            <button class="alio-chart-tab active" data-chart="models">Model Comparison</button>
+            <button class="alio-chart-tab" data-chart="scatter">Predictions</button>
+            <button class="alio-chart-tab" data-chart="features">Feature Importance</button>
+            <button class="alio-chart-tab" data-chart="corr">Correlations</button>
+          </div>
+        </div>
+
+        <!-- Model comparison -->
+        <div class="alio-chart-body">
+          <div class="alio-chart-panel active" id="chart-models">
+            <div id="plot-models" style="height:260px"></div>
+            <div class="alio-insight">
+              <strong>AC/DC amplitude channels are the key unlock.</strong> Moving from RoR-only features (MAE 2.3) to the 8 AC/DC channels drops error to ~1.5 — a 35% improvement. The original single train/test split in the notebook gave an optimistic 1.27; 5-fold cross-validation gives a more honest estimate of ~1.5–1.6.
+            </div>
+          </div>
+
+          <!-- Scatter -->
+          <div class="alio-chart-panel" id="chart-scatter">
+            <div id="plot-scatter" style="height:260px"></div>
+            <div class="alio-insight">
+              <strong>Clinical context:</strong> The dialysis target range is Hct 33–36%. An error of ±1.5 pts is meaningful but not disqualifying — for early-warning use (detecting a drop below 30%), directional accuracy matters most. Points are color-coded: <strong>green</strong> &lt;1 pt error, <strong>amber</strong> &lt;2.5 pts, <strong>red</strong> above.
+            </div>
+          </div>
+
+          <!-- Feature importance -->
+          <div class="alio-chart-panel" id="chart-features">
+            <div id="plot-features" style="height:280px"></div>
+            <div class="alio-insight">
+              <strong>RoR_right dominates</strong> at 20.6% importance, consistent with the Schmitt 1992 algorithm. DC baseline channels (median_HB_13_DC at 19.4%, median_HB_3_DC at 12.1%) collectively outweigh AC pulsatile channels — tissue optical properties at baseline encode more hematocrit signal than cardiac-cycle variation.
+            </div>
+          </div>
+
+          <!-- Correlations -->
+          <div class="alio-chart-panel" id="chart-corr">
+            <div id="plot-corr" style="height:260px"></div>
+            <div class="alio-insight">
+              <strong>RoR_right has the strongest individual correlation</strong> with true Hct (r = 0.39). The DC amplitude channels follow (median_HB_3_DC r = 0.22, median_HB_13_DC r = 0.21). AC amplitude channels alone are weakly correlated — the baseline optical signal carries more hematocrit information than the pulsatile component.
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats footer row -->
+        <div class="alio-stats">
+          <div class="alio-stat">
+            <span class="alio-stat-value">~1.5 pts</span>
+            <span class="alio-stat-label">Best MAE (5-fold CV)</span>
+          </div>
+          <div class="alio-stat">
+            <span class="alio-stat-value">7.3 pts</span>
+            <span class="alio-stat-label">Baseline linear error</span>
+          </div>
+          <div class="alio-stat">
+            <span class="alio-stat-value">80%</span>
+            <span class="alio-stat-label">Error reduction</span>
+          </div>
+          <div class="alio-stat">
+            <span class="alio-stat-value">10 features</span>
+            <span class="alio-stat-label">IR optical channels</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- end #tab-alio -->
+
+</div><!-- end .tabs-wrapper -->
 
 <footer>
   <span class="footer-left">govindanand.github.io</span>
@@ -482,17 +797,173 @@
 </footer>
 
 <script>
+  /* ── TAB SWITCHING ───────────────────────────────────────────── */
   const buttons = document.querySelectorAll('.tab-btn');
   const panels  = document.querySelectorAll('.tab-panel');
+  let alioChartsRendered = false;
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
-      panels.forEach(p  => p.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      const panel = document.getElementById('tab-' + btn.dataset.tab);
+      panel.classList.add('active');
+      if (btn.dataset.tab === 'alio' && !alioChartsRendered) {
+        renderAlioCharts();
+        alioChartsRendered = true;
+      }
     });
   });
+
+  /* ── ALIO INNER CHART TABS ───────────────────────────────────── */
+  document.querySelectorAll('.alio-chart-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.alio-chart-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.alio-chart-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('chart-' + tab.dataset.chart).classList.add('active');
+      // Trigger Plotly resize on reveal
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
+    });
+  });
+
+  /* ── DATA ────────────────────────────────────────────────────── */
+  const MODEL_DATA = [
+    { name: 'Linear Regression (All)',   mae: 2.257, std: 0.178 },
+    { name: 'RF — RoR Only',             mae: 2.345, std: 0.165 },
+    { name: 'RF — AC/DC Only',           mae: 1.519, std: 0.281 },
+    { name: 'RF — All Features',         mae: 1.605, std: 0.098 },
+    { name: 'Gradient Boosting (All)',   mae: 1.589, std: 0.254 },
+  ];
+
+  const FEAT_IMP = [
+    ['RoR_right', 0.2059], ['median_HB_13_DC', 0.1944], ['RoR_left', 0.1366],
+    ['median_HB_3_DC', 0.1211], ['median_HB_11', 0.1068], ['median_HB_11_DC', 0.0621],
+    ['median_HB_5_DC', 0.0601], ['median_HB_13', 0.0534], ['median_HB_5', 0.0309],
+    ['median_HB_3', 0.0288]
+  ];
+
+  const CORR_DATA = {
+    'RoR_right': 0.3893, 'median_HB_3_DC': 0.2232, 'RoR_left': 0.2166,
+    'median_HB_13_DC': 0.2081, 'median_HB_5_DC': 0.0686, 'median_HB_3': 0.1453,
+    'median_HB_11_DC': 0.0207, 'median_HB_5': 0.003,
+    'median_HB_13': -0.0608, 'median_HB_11': -0.0658
+  };
+
+  const SCATTER_REAL = [33.4,36.4,37.7,35.1,34.9,34.9,34.9,34.9,34.9,34.9,34.9,34.9,34.9,34.9,34.9,42.4,42.4,42.4,42.4,42.4,42.4,42.4,36.4,36.4,36.4,36.4,36.4,36.4,36.4,36.4,36.2,36.2];
+  const SCATTER_PRED = [35.02,36.27,37.39,35.11,35.87,35.38,34.78,35.16,34.95,35.21,35.45,35.51,35.46,35.46,35.56,40.38,40.21,40.17,40.37,40.44,40.32,40.38,36.14,36.11,36.04,36.04,36.12,36.16,36.07,36.11,35.62,35.58];
+
+  /* ── PLOTLY THEME (matches site palette) ────────────────────── */
+  const BG      = 'rgba(0,0,0,0)';   // transparent — inherits card bg
+  const GRID    = '#e8e5de';
+  const MUTED   = '#a09d97';
+  const PRIMARY = '#1a1917';
+  const AMBER   = '#8a6a2a';         // darker amber for light bg
+  const BLUE    = '#3a6b8a';
+  const GREEN   = '#4a7a54';
+  const RED     = '#8a3a3a';
+  const SUBTLE  = '#d0cdc4';
+
+  const BASE_LAYOUT = {
+    paper_bgcolor: BG,
+    plot_bgcolor:  BG,
+    font: { family: "'DM Sans', sans-serif", color: MUTED, size: 11.5 },
+    margin: { t: 16, b: 48, l: 52, r: 16 },
+    xaxis: { gridcolor: GRID, zerolinecolor: GRID, tickfont: { size: 11 } },
+    yaxis: { gridcolor: GRID, zerolinecolor: GRID, tickfont: { size: 11 } },
+    showlegend: false,
+  };
+
+  const CONFIG = { displayModeBar: false, responsive: true };
+
+  function renderAlioCharts() {
+
+    /* 1. Model comparison */
+    const mColors = MODEL_DATA.map((_, i) => i === 2 ? GREEN : i === 4 ? BLUE : SUBTLE);
+    Plotly.newPlot('plot-models', [{
+      x: MODEL_DATA.map(m => m.mae),
+      y: MODEL_DATA.map(m => m.name),
+      error_x: { type: 'data', array: MODEL_DATA.map(m => m.std), visible: true,
+        color: MUTED, thickness: 1.5, width: 5 },
+      type: 'bar', orientation: 'h',
+      marker: { color: mColors, line: { color: BG, width: 0 } },
+      text: MODEL_DATA.map(m => m.mae.toFixed(2)),
+      textposition: 'outside',
+      textfont: { size: 11, color: PRIMARY, family: "'DM Mono', monospace" },
+      hovertemplate: '<b>%{y}</b><br>MAE: %{x:.3f}<extra></extra>',
+      cliponaxis: false
+    }], {
+      ...BASE_LAYOUT,
+      height: 260,
+      margin: { t: 12, b: 44, l: 190, r: 52 },
+      xaxis: { ...BASE_LAYOUT.xaxis, title: { text: 'Mean Absolute Error (Hct %, 5-fold CV)', font: { size: 11 } }, range: [0, 3.0] },
+      yaxis: { ...BASE_LAYOUT.yaxis, automargin: true, tickfont: { size: 11 } },
+      shapes: [{ type: 'line', x0: 1.5, x1: 1.5, y0: -0.5, y1: 4.5,
+        line: { color: SUBTLE, width: 1, dash: 'dot' } }]
+    }, CONFIG);
+
+    /* 2. Scatter */
+    const errors = SCATTER_REAL.map((r, i) => Math.abs(r - SCATTER_PRED[i]));
+    const sColors = errors.map(e => e < 1 ? GREEN : e < 2.5 ? AMBER : RED);
+    const minV = Math.min(...SCATTER_REAL, ...SCATTER_PRED) - 1;
+    const maxV = Math.max(...SCATTER_REAL, ...SCATTER_PRED) + 1;
+
+    Plotly.newPlot('plot-scatter', [
+      { x: [minV, maxV], y: [minV, maxV], mode: 'lines', type: 'scatter',
+        line: { color: GRID, width: 1.5, dash: 'dot' }, hoverinfo: 'skip' },
+      { x: SCATTER_REAL, y: SCATTER_PRED, mode: 'markers', type: 'scatter',
+        marker: { color: sColors, size: 9, opacity: 0.85, line: { color: '#fff', width: 1.5 } },
+        hovertemplate: 'True: %{x:.1f}%<br>Predicted: %{y:.2f}%<br>Error: %{text} pts<extra></extra>',
+        text: errors.map(e => e.toFixed(2)) }
+    ], {
+      ...BASE_LAYOUT,
+      height: 260,
+      margin: { t: 12, b: 48, l: 52, r: 16 },
+      xaxis: { ...BASE_LAYOUT.xaxis, title: { text: 'True Hematocrit (%)', font: { size: 11 } }, range: [minV, maxV] },
+      yaxis: { ...BASE_LAYOUT.yaxis, title: { text: 'Predicted (%)', font: { size: 11 } }, range: [minV, maxV] }
+    }, CONFIG);
+
+    /* 3. Feature importance */
+    const fiNames = FEAT_IMP.map(f => f[0]).reverse();
+    const fiVals  = FEAT_IMP.map(f => f[1]).reverse();
+    const fiColors = fiNames.map(n => n.startsWith('RoR') ? BLUE : n.endsWith('_DC') ? GREEN : SUBTLE);
+
+    Plotly.newPlot('plot-features', [{
+      x: fiVals, y: fiNames, type: 'bar', orientation: 'h',
+      marker: { color: fiColors, line: { color: BG, width: 0 } },
+      text: fiVals.map(v => (v * 100).toFixed(1) + '%'),
+      textposition: 'outside',
+      textfont: { size: 10.5, color: PRIMARY, family: "'DM Mono', monospace" },
+      hovertemplate: '<b>%{y}</b><br>Importance: %{x:.4f}<extra></extra>',
+      cliponaxis: false
+    }], {
+      ...BASE_LAYOUT,
+      height: 280,
+      margin: { t: 12, b: 44, l: 140, r: 52 },
+      xaxis: { ...BASE_LAYOUT.xaxis, title: { text: 'Feature Importance (Gini)', font: { size: 11 } }, range: [0, 0.27] },
+      yaxis: { ...BASE_LAYOUT.yaxis, automargin: true, tickfont: { size: 10.5, family: "'DM Mono', monospace" } }
+    }, CONFIG);
+
+    /* 4. Correlations */
+    const cNames = Object.keys(CORR_DATA);
+    const cVals  = Object.values(CORR_DATA);
+    const cColors = cVals.map(v => v > 0.3 ? GREEN : v > 0.15 ? BLUE : v < -0.02 ? RED : SUBTLE);
+
+    Plotly.newPlot('plot-corr', [{
+      x: cVals, y: cNames, type: 'bar', orientation: 'h',
+      marker: { color: cColors, line: { color: BG, width: 0 } },
+      hovertemplate: '<b>%{y}</b><br>r = %{x:.4f}<extra></extra>'
+    }], {
+      ...BASE_LAYOUT,
+      height: 260,
+      margin: { t: 12, b: 48, l: 140, r: 16 },
+      xaxis: { ...BASE_LAYOUT.xaxis, title: { text: 'Pearson r', font: { size: 11 } }, range: [-0.12, 0.46] },
+      yaxis: { ...BASE_LAYOUT.yaxis, automargin: true, tickfont: { size: 10.5, family: "'DM Mono', monospace" } },
+      shapes: [{ type: 'line', x0: 0, x1: 0, y0: -0.5, y1: cNames.length - 0.5,
+        line: { color: MUTED, width: 1 } }]
+    }, CONFIG);
+  }
 </script>
 
 </body>
