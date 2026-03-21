@@ -1,255 +1,442 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	   	<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Vin Anand | About</title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<link rel="icon" type="image/png" href="/favicon.png">
-	</head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vin Anand | About</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about.html">About</a></li>
-			<li><a href="/blog.html">Venture Capital</a></li>
-        		<li><a href="/files/ResumeVin.pdf">CV</a></li>
-    		</ul>
-		</nav>
+    :root {
+      --bg: #f9f8f5;
+      --surface: #ffffff;
+      --border: #e8e5de;
+      --border-strong: #d0cdc4;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-muted: #a09d97;
+      --tag-bg: #f0ede6;
+      --tag-text: #4a4845;
+      --font: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
 
-		<h1>About</h1>
-    <p class = "p-welcome">
-			Listed below are details on some of my past experiences. From early entreprenurial ventures in high school to materials science research for biomedical applications, the following list captures some of my intellectual pursuits outside of my day job as a product manager.
-			I am also an avid runner and alternative rock enthusiast – some of my favorite bands are The Strokes, Red Hot Chili Peppers and Cage the Elephant.
-			Check out my band <a href="https://open.spotify.com/artist/5mRlDRVITFlgc4QVBvGVul" class="cov-link">The Modern Garage</a> on Spotify!</p>
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-		<p></p>
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-		<hr> <!-- adding a line in the page -->
-		<br> <!-- adding a one line break -->
+    .nav-name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
 
-		<heading>Projects</heading>
-		<p></p>
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-		<!-- Video Project -->
-		<a href="/files/pacman.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-			<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-				<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-				<tbody>
-					<tr>
-						<td style="padding:20px;width:25%;vertical-align:middle; text-align:center;">
-						    <video style="width: 75%; max-width: 188px; height: auto; border-radius: 8px; display: block; margin: 0 auto;" autoplay loop muted playsinline>
-						        <source src="/videos/pacman.mp4" type="video/mp4">
-						        Your browser does not support the video tag.
-						    </video>
-						</td>
-						<td style="padding:20px;width:75%;vertical-align:middle">
-							<b><papertitle>Pacman: Reinforcement Learning and AI Agents</papertitle></b>
-							<br>
-							<p></p>
-							<p>
-								This project implemented core reinforcement learning algorithms to train intelligent agents that learn optimal behavior through planning and experience. Using value iteration and Q-learning, the agent learned to make sequential decisions in uncertain environments, demonstrating how reward-driven feedback enables adaptive strategies and long-term optimization.
-							</p>
-							<p></p>
-							<a href="https://web.archive.org/web/20191114124101/https://inst.eecs.berkeley.edu/~cs188/fa19/project3/" target="_blank" onclick="event.stopPropagation();"><i><sub>CS 188</sub></i></a>
-						</td>
-					</tr>
-				</tbody>
-				</table>
-			</div>
-		</a>
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
 
-		<!-- First Project -->
-		<a href="/files/recycle.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-			<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-				<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-				<tbody>
-					<tr>
-						<td style="padding:20px;width:25%;vertical-align:middle">
-							<img src='/images/recycle.png' width="250">
-						</td>
-						<td style="padding:20px;width:75%;vertical-align:middle">
-							<b><papertitle>Recycle.ai: Improving consumer recycling</papertitle></b>
-							<br>
-							<p></p>
-							<p>
-								Recycle.ai is a mobile app that uses machine learning to provide real-time, location-specific recycling recommendations.
-								It simplifies recycling, helps users follow local guidelines, and aims to standardize practices, reducing waste, conserving resources, and supporting environmental sustainability.
-							</p>
-							<p></p>
-							<a href="/videos/recycle.mp4" target="_blank" onclick="event.stopPropagation();"><i><sub>Demo</sub></i></a>
-						</td>
-					</tr>
-				</tbody>
-				</table>
-			</div>
-		</a>
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
 
-		<!-- Second Project -->
-		<a href="/files/aurdr.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-			<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-				<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-				<tbody>
-					<tr>
-						<td style="padding:20px;width:25%;vertical-align:middle">
-							<img src='/images/aurdr.png' width="250">
-						</td>
-						<td style="padding:20px;width:75%;vertical-align:middle">
-							<b><papertitle>Aurdr: E-commerce for students</papertitle></b>
-							<br>
-							<p></p>
-							<p>
-								A shopping app designed to provide students with a quick and easy way to purchase basic necessities like school supplies, apparel, beverages, and electronics.
-								Available on both web and mobile platforms, Aurdr allows customers to browse items, add to cart, and place a delivery order.
-							</p>
-							<p></p>
-							<a href="https://www.thechurchillobserver.com/top-stories/2016/04/22/new-app-makes-online-shopping-simple-for-chs-students/" target="_blank" onclick="event.stopPropagation();"><i><sub>Newsletter</sub></i></a>
-						</td>
-					</tr>
-				</tbody>
-				</table>
-			</div>
-		</a>
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 5rem;
+    }
 
-		<p></p>
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin-bottom: 3rem;
+    }
 
-		<br>
-		<heading>Publications</heading>
-		<p></p>
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
 
-		<!-- First Publication -->
-		<a href="/files/patent.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-			<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-				<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-				<tbody>
-					<tr>
-						<td style="padding:20px;width:25%;vertical-align:middle">
-							<img src='/images/patent.png' width="250">
-						</td>
-						<td style="padding:20px;width:75%;vertical-align:middle">
-							<b><papertitle>Patent: Training Machine Learning Models Based On Feature Validity</papertitle></b>
-							<br>
-							<p></p>
-							<p>
-								Authored a patent describing a system that enhances the accuracy of machine learning models by evaluating and incorporating feature validity during training.
-								This method helps sustain model performance over time, even when feature generation processes face disruptions or failures.
-							<p></p>
-							<a href="https://patentcenter.uspto.gov/applications/18317898" target="_blank" onclick="event.stopPropagation();"><i><sub>USPTO</sub></i></a>
-							</p>
-						</td>
-					</tr>
-				</tbody>
-				</table>
-			</div>
-		</a>
+    .page-header h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
 
-		<!-- Second Publication -->
-		<a href="/files/thunberg.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-			<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-				<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-				<tbody>
-					<tr>
-						<td style="padding:20px;width:25%;vertical-align:middle">
-							<img src='/images/scet.png' width="250">
-						</td>
-						<td style="padding:20px;width:75%;vertical-align:middle">
-							<b><papertitle>Greta Thunberg: The Voice of Our Planet</papertitle></b>
-							<br>
-							<p></p>
-							<p>
-								This case study covers the efforts and mission of climate activist Greta Thunberg and the attributes which make her a north star leader. By exploring the nuances of her influence and that of other north star leaders, this case discusses the key characteristics of a vision-driven leader.
-							<p></p>
-							<a href="https://leaderstudio.berkeley.edu" target="_blank" onclick="event.stopPropagation();"><i><sub>SCET Leader Studio</sub></i></a>
-							</p>
-						</td>
-					</tr>
-				</tbody>
-				</table>
-			</div>
-		</a>
+    .page-header h1 em {
+      font-style: normal;
+      font-weight: 500;
+    }
 
-		<p></p>
+    .page-header p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 580px;
+    }
 
-<heading>Research</heading>
-<p></p>
+    .page-header p a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border-strong);
+      transition: text-decoration-color 0.15s;
+    }
 
-<!-- First Research -->
-<a href="/files/nucleationLab.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-	<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-		<tbody>
-			<tr>
-				<td style="padding:20px;width:25%;vertical-align:middle">
-					<img src='/images/nucleation.png' width="250">
-				</td>
-				<td style="padding:20px;width:75%;vertical-align:middle">
-					<b><papertitle>Nucleation and Growth During the Crystallization of Amorphous Tellurium Thin Films</papertitle></b>
-					<br>
-					<p></p>
-					<p>
-						Nucleation is a thermally activated process which can be used to develop high quality crystalline semiconductor materials on any non-crystalline substrate at low temperatures. This study explores the kinetics and crystallization of amorphous Tellurium (semiconductor) with investigations into the low temperature growth of high-quality thin films on amorphous silica substrates.
-					<p></p>
-					<a href="https://nano.eecs.berkeley.edu/research/" target="_blank" onclick="event.stopPropagation();"><i><sub>Analysis on experimental data obtained by the Javey Research Group</sub></i></a>
-					</p>
-				</td>
-			</tr>
-		</tbody>
-		</table>
-	</div>
-</a>
+    .page-header p a:hover {
+      text-decoration-color: var(--text-primary);
+    }
 
-<!-- Second Research -->
-<a href="/files/jhu1.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-	<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-		<tbody>
-			<tr>
-				<td style="padding:20px;width:25%;vertical-align:middle">
-					<img src='/images/jhu1.png' width="250">
-				</td>
-				<td style="padding:20px;width:75%;vertical-align:middle">
-					<b><papertitle>Controlling Size of PEG-PLGA Nanoparticles by Flash Nano Precipitation Using a Confined Impinging Jet Device</papertitle></b>
-					<br>
-					<p></p>
-					<p>
-						Polymeric nanoparticles are used for a variety of biomedical applications as result of inexpensive production costs and a wide range of physicochemical properties. By optimizing specific parameters, they can serve as effective delivery platforms. This study investigates the effect of material input flow rates on the size distribution of PEG-PLGA nanoparticles for antigen delivery.
-					<p></p>
-					<a href="https://inbt.jhu.edu/" target="_blank" onclick="event.stopPropagation();"><i><sub>JHU INBT</sub></i></a>
-					</p>
-				</td>
-			</tr>
-		</tbody>
-		</table>
-	</div>
-</a>
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 3.5rem;
+    }
 
-<!-- Third Research -->
-<a href="/files/cnmc.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-	<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 30px; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-		<tbody>
-			<tr>
-				<td style="padding:20px;width:25%;vertical-align:middle">
-					<img src='/images/cnmc.png' width="250">
-				</td>
-				<td style="padding:20px;width:75%;vertical-align:middle">
-					<b><papertitle>Synthesis and Characterization of Prussian Blue Nanoparticles for Tumor Targeting</papertitle></b>
-					<br>
-					<p></p>
-					<p>
-						This study describes the use of Prussian Blue, a ferrous ferrocyanide compound, in nanoparticles for tumor targeting. Prussian Blue exhibits robust heating when exposed to near-infrared light. As a result, tailored nanoparticles can be used to target cancer cells within the body for elimination. These nanoparticles where characterized for photothermal heating and compared with the industry standards.
-					<p></p>
-					<a href="https://childrensnational.org/research-and-education/sheikh-zayed" target="_blank" onclick="event.stopPropagation();"><i><sub>Children's National Medical Center</sub></i></a>
-					</p>
-				</td>
-			</tr>
-		</tbody>
-		</table>
-	</div>
-</a>
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
 
-<p></p>
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-	</body>
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── ENTRY CARD ── */
+    .entry-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .entry-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .entry-inner {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 580px) {
+      .entry-inner {
+        grid-template-columns: 1fr;
+      }
+      .entry-media { display: none; }
+    }
+
+    /* ── MEDIA ── */
+    .entry-media {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .entry-media img,
+    .entry-media video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── TEXT ── */
+    .entry-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .entry-title {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    .entry-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .entry-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-top: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .entry-link:hover {
+      color: var(--text-primary);
+    }
+
+    .entry-link::after {
+      content: '↗';
+      font-size: 10px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--text-primary); }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a class="nav-name" href="/">Vin Anand</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html" class="active">About</a></li>
+      <li><a href="/products.html">Products</a></li>
+      <li><a href="/blog.html">Venture Capital</a></li>
+      <li><a href="/files/ResumeVin.pdf">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <p class="page-eyebrow">Background</p>
+      <h1>Work, research, <em>&amp; projects</em></h1>
+      <p>
+        From early entrepreneurial ventures in high school to materials science research for biomedical applications, the following captures some of my intellectual pursuits outside of my day job as an investor. I'm also an avid runner and alternative rock enthusiast — The Strokes, RHCP, and Cage the Elephant. Check out my band <a href="https://open.spotify.com/artist/5mRlDRVITFlgc4QVBvGVul" target="_blank">The Modern Garage</a> on Spotify.
+      </p>
+    </div>
+
+    <!-- ── PROJECTS ── -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Projects</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <a class="entry-card" href="/files/pacman.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <video autoplay loop muted playsinline>
+              <source src="/videos/pacman.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Pacman: Reinforcement Learning and AI Agents</span>
+            <p class="entry-desc">Implemented core RL algorithms to train intelligent agents that learn optimal behavior through planning and experience. Using value iteration and Q-learning, the agent learns to make sequential decisions in uncertain environments — demonstrating how reward-driven feedback enables adaptive strategies and long-term optimization.</p>
+            <a class="entry-link" href="https://web.archive.org/web/20191114124101/https://inst.eecs.berkeley.edu/~cs188/fa19/project3/" target="_blank" onclick="event.stopPropagation()">CS 188</a>
+          </div>
+        </div>
+      </a>
+
+      <a class="entry-card" href="/files/recycle.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/recycle.png" alt="Recycle.ai">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Recycle.ai: Improving consumer recycling</span>
+            <p class="entry-desc">A mobile app that uses machine learning to provide real-time, location-specific recycling recommendations. It simplifies recycling, helps users follow local guidelines, and aims to standardize practices — reducing waste, conserving resources, and supporting environmental sustainability.</p>
+            <a class="entry-link" href="/videos/recycle.mp4" target="_blank" onclick="event.stopPropagation()">Demo</a>
+          </div>
+        </div>
+      </a>
+
+      <a class="entry-card" href="/files/aurdr.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/aurdr.png" alt="Aurdr">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Aurdr: E-commerce for students</span>
+            <p class="entry-desc">A shopping app designed to provide students with a quick and easy way to purchase basic necessities like school supplies, apparel, beverages, and electronics. Available on both web and mobile platforms, Aurdr allows customers to browse items, add to cart, and place a delivery order.</p>
+            <a class="entry-link" href="https://www.thechurchillobserver.com/top-stories/2016/04/22/new-app-makes-online-shopping-simple-for-chs-students/" target="_blank" onclick="event.stopPropagation()">Newsletter</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── PUBLICATIONS ── -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Publications</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <a class="entry-card" href="/files/patent.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/patent.png" alt="Patent">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Patent: Training Machine Learning Models Based On Feature Validity</span>
+            <p class="entry-desc">Authored a patent describing a system that enhances the accuracy of machine learning models by evaluating and incorporating feature validity during training. This method helps sustain model performance over time, even when feature generation processes face disruptions or failures.</p>
+            <a class="entry-link" href="https://patentcenter.uspto.gov/applications/18317898" target="_blank" onclick="event.stopPropagation()">USPTO</a>
+          </div>
+        </div>
+      </a>
+
+      <a class="entry-card" href="/files/thunberg.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/scet.png" alt="SCET Leader Studio">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Greta Thunberg: The Voice of Our Planet</span>
+            <p class="entry-desc">This case study covers the efforts and mission of climate activist Greta Thunberg and the attributes which make her a north star leader. By exploring the nuances of her influence and that of other north star leaders, this case discusses the key characteristics of a vision-driven leader.</p>
+            <a class="entry-link" href="https://leaderstudio.berkeley.edu" target="_blank" onclick="event.stopPropagation()">SCET Leader Studio</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── RESEARCH ── -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Research</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <a class="entry-card" href="/files/nucleationLab.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/nucleation.png" alt="Nucleation study">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Nucleation and Growth During the Crystallization of Amorphous Tellurium Thin Films</span>
+            <p class="entry-desc">Nucleation is a thermally activated process which can be used to develop high quality crystalline semiconductor materials on any non-crystalline substrate at low temperatures. This study explores the kinetics and crystallization of amorphous Tellurium with investigations into the low temperature growth of high-quality thin films on amorphous silica substrates.</p>
+            <a class="entry-link" href="https://nano.eecs.berkeley.edu/research/" target="_blank" onclick="event.stopPropagation()">Javey Research Group</a>
+          </div>
+        </div>
+      </a>
+
+      <a class="entry-card" href="/files/jhu1.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/jhu1.png" alt="JHU nanoparticles">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Controlling Size of PEG-PLGA Nanoparticles by Flash Nano Precipitation Using a Confined Impinging Jet Device</span>
+            <p class="entry-desc">Polymeric nanoparticles are used for a variety of biomedical applications as a result of inexpensive production costs and a wide range of physicochemical properties. This study investigates the effect of material input flow rates on the size distribution of PEG-PLGA nanoparticles for antigen delivery.</p>
+            <a class="entry-link" href="https://inbt.jhu.edu/" target="_blank" onclick="event.stopPropagation()">JHU INBT</a>
+          </div>
+        </div>
+      </a>
+
+      <a class="entry-card" href="/files/cnmc.pdf" target="_blank">
+        <div class="entry-inner">
+          <div class="entry-media">
+            <img src="/images/cnmc.png" alt="Prussian Blue nanoparticles">
+          </div>
+          <div class="entry-text">
+            <span class="entry-title">Synthesis and Characterization of Prussian Blue Nanoparticles for Tumor Targeting</span>
+            <p class="entry-desc">This study describes the use of Prussian Blue, a ferrous ferrocyanide compound, in nanoparticles for tumor targeting. Prussian Blue exhibits robust heating when exposed to near-infrared light, enabling tailored nanoparticles to target cancer cells within the body. Characterized for photothermal heating and compared with industry standards.</p>
+            <a class="entry-link" href="https://childrensnational.org/research-and-education/sheikh-zayed" target="_blank" onclick="event.stopPropagation()">Children's National Medical Center</a>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="footer-left">govindanand.github.io</span>
+    <ul class="footer-links">
+      <li><a href="mailto:vinanand.va@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vinanand/" target="_blank">LinkedIn</a></li>
+      <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a></li>
+    </ul>
+  </footer>
+
+</body>
 </html>
