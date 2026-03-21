@@ -1,151 +1,428 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Vin Anand | Venture Capital</title>
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<link rel="icon" type="image/png" href="/favicon.png">
-	</head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vin Anand | Venture Capital</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<body>
-		<nav>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/about.html">About</a></li>
-					<li><a href="/blog.html">Venture Capital</a></li>
-					<li><a href="/files/ResumeVin.pdf">CV</a></li>
-				</ul>
-		</nav>
-		<h1>Startups & VC</h1>
-    <p class = "p-welcome">
-			This page captures my thoughts on emerging technology trends, market opportunities, and early stage startups. All perspectives are my own - if you're interested in any of this analysis or want to talk startups, drop me a line!
-			Also happy to make any intros with startups that might be spotlighted below.
-		</p>
+    :root {
+      --bg: #f9f8f5;
+      --surface: #ffffff;
+      --border: #e8e5de;
+      --border-strong: #d0cdc4;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-muted: #a09d97;
+      --tag-bg: #f0ede6;
+      --tag-text: #4a4845;
+      --font: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
 
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-		<p></p>
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-		<hr>
-		<br> <!-- adding a one line break -->
-		<heading>Angel Investments</heading>
-		<p></p>
+    .nav-name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
 
-		<p></p>
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-<div style="max-width: 900px; margin: 40px auto;">
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
 
-    <!-- First Investment -->
-    <a href="https://minerva.io/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 100px; height: 100px; flex-shrink: 0;">
-                <img src="images/minerva.png" alt="Company 1" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">Minerva</h3>
-                <p>Minerva's platform makes consumer behavior observable, predictable and actionable. We help our customers power their go-to-market organizations (both human and agentic) with hyper-granular context on their customers.</p>
-            </div>
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 5rem;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-header h1 em {
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    /* SECTION */
+    .section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ANGEL CARD — logo left, text right */
+    .angel-card {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .angel-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .angel-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .angel-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .angel-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .angel-text h3 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .angel-text p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* RESEARCH CARD — image left, text right */
+    .research-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .research-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .research-image {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .research-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .research-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .research-text h3 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+
+    .research-text p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .research-date {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-top: 0.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .angel-card { grid-template-columns: 1fr; }
+      .research-card { grid-template-columns: 1fr; }
+      .angel-logo { width: 72px; height: 72px; }
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--text-primary); }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a class="nav-name" href="/">Vin Anand</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/products.html">Products</a></li>
+      <li><a href="/blog.html" class="active">Venture Capital</a></li>
+      <li><a href="/files/ResumeVin.pdf">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <p class="page-eyebrow">Investing</p>
+      <h1>Startups <em>&amp; VC</em></h1>
+      <p>
+        This page captures my thoughts on emerging technology trends, market opportunities, and early stage startups. All perspectives are my own. If you're interested in any of this analysis or want to talk startups, drop me a line — happy to make intros to any of the startups spotlighted below.
+      </p>
+    </div>
+
+    <!-- ANGEL INVESTMENTS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Angel Investments</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <a class="angel-card" href="https://minerva.io/" target="_blank">
+        <div class="angel-logo">
+          <img src="/images/minerva.png" alt="Minerva">
         </div>
-    </a>
-
-    <!-- Second Investment -->
-    <a href="https://ambusun.com/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 100px; height: 100px; flex-shrink: 0;">
-                <img src="images/ambusun.png" alt="Company 2" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">Ambusun</h3>
-                <p>Ambusun develops autonomous agents that integrate directly with existing workflows to handle the high-volume, high-complexity tasks that keep administrative staff in "firefighting" mode.</p>
-            </div>
+        <div class="angel-text">
+          <h3>Minerva</h3>
+          <p>Minerva's platform makes consumer behavior observable, predictable and actionable. They help go-to-market organizations — both human and agentic — with hyper-granular context on their customers.</p>
         </div>
-    </a>
+      </a>
 
-</div>
-
-
-<br> <!-- adding a one line break -->
-
-<heading>Thematic Research</heading>
-<p></p>
-
-<p></p>
-<div style="max-width: 900px; margin: 40px auto;">
-
-    <!-- First Research -->
-    <a href="/files/polars.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 250px; flex-shrink: 0;">
-                <img src='/images/polars.png' alt="Query Engines" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">Query Engines</h3>
-                <p>Exploring Spark alternatives for data processing tools. From storage to compute, identifying technologies that enable performant data transformation for ML use cases. POV highlights Polars and Polars cloud for enterprises.</p>
-                <p style="margin-top: 10px;"><i><sub>January 2026</sub></i></p>
-            </div>
+      <a class="angel-card" href="https://ambusun.com/" target="_blank">
+        <div class="angel-logo">
+          <img src="/images/ambusun.png" alt="Ambusun">
         </div>
-    </a>
-
-	<!-- Second Research -->
-    <a href="/files/hex.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 250px; flex-shrink: 0;">
-                <img src='/images/hex.png' alt="Data Notebooks" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">Data Notebooks</h3>
-                <p>An overview on the market for modern data notebooks like Hex and marimo. This analysis details the productivity multiplier associated with solving Jupyter gaps to accelerate model development for the entire enterprise.</p>
-                <p style="margin-top: 10px;"><i><sub>December 2025</sub></i></p>
-            </div>
+        <div class="angel-text">
+          <h3>Ambusun</h3>
+          <p>Ambusun develops autonomous agents that integrate directly with existing workflows to handle the high-volume, high-complexity tasks that keep administrative staff in firefighting mode.</p>
         </div>
-    </a>
+      </a>
+    </div>
 
-    <!-- Third Research -->
-    <a href="/files/annotation.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 250px; flex-shrink: 0;">
-                <img src='/images/annotation.png' alt="Data Annotation Platforms" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">Data Annotation Platforms</h3>
-                <p>An overview on the market for data annotation platforms. This analysis details the opportunity associated with establishing high-fidelity ground truth as a core competitive advantage for mission-critical AI systems.</p>
-                <p style="margin-top: 10px;"><i><sub>September 2025</sub></i></p>
-            </div>
+    <!-- THEMATIC RESEARCH -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Thematic Research</span>
+        <div class="section-rule"></div>
+      </div>
+
+      <a class="research-card" href="/files/polars.pdf" target="_blank">
+        <div class="research-image">
+          <img src="/images/polars.png" alt="Query Engines">
         </div>
-    </a>
-
-    <!-- Third Research -->
-    <a href="/files/n2c.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 250px; flex-shrink: 0;">
-                <img src='/images/n2c.png' alt="New-to-credit population" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">New-to-credit population market analysis</h3>
-                <p>An overview on the market for alternative data with respect to new-to-credit consumers. This analysis details the financial opportunity associated with Gen Z and Gen Alpha banking customers.</p>
-                <p style="margin-top: 10px;"><i><sub>November 2024</sub></i></p>
-            </div>
+        <div class="research-text">
+          <h3>Query Engines</h3>
+          <p>Exploring Spark alternatives for data processing tools. From storage to compute, identifying technologies that enable performant data transformation for ML use cases. POV highlights Polars and Polars Cloud for enterprises.</p>
+          <span class="research-date">January 2026</span>
         </div>
-    </a>
+      </a>
 
-    <!-- Fourth Research -->
-    <a href="/files/legalTech.pdf" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="display: flex; gap: 20px; margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width: 250px; flex-shrink: 0;">
-                <img src='/images/legal.png' alt="Legal AI" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-            <div>
-                <h3 style="margin-top: 0;">Legal Technology and Generative AI</h3>
-                <p>Thematic research on the impact of generative AI technology in the legal industry. Exploring the technology trends in application software for legal services businesses.</p>
-                <p style="margin-top: 10px;"><i><sub>June 2024</sub></i></p>
-            </div>
+      <a class="research-card" href="/files/hex.pdf" target="_blank">
+        <div class="research-image">
+          <img src="/images/hex.png" alt="Data Notebooks">
         </div>
-    </a>
+        <div class="research-text">
+          <h3>Data Notebooks</h3>
+          <p>An overview on the market for modern data notebooks like Hex and marimo. This analysis details the productivity multiplier associated with solving Jupyter gaps to accelerate model development for the entire enterprise.</p>
+          <span class="research-date">December 2025</span>
+        </div>
+      </a>
 
-</div>
+      <a class="research-card" href="/files/annotation.pdf" target="_blank">
+        <div class="research-image">
+          <img src="/images/annotation.png" alt="Data Annotation Platforms">
+        </div>
+        <div class="research-text">
+          <h3>Data Annotation Platforms</h3>
+          <p>An overview on the market for data annotation platforms. This analysis details the opportunity associated with establishing high-fidelity ground truth as a core competitive advantage for mission-critical AI systems.</p>
+          <span class="research-date">September 2025</span>
+        </div>
+      </a>
 
+      <a class="research-card" href="/files/n2c.pdf" target="_blank">
+        <div class="research-image">
+          <img src="/images/n2c.png" alt="New-to-credit population">
+        </div>
+        <div class="research-text">
+          <h3>New-to-credit population market analysis</h3>
+          <p>An overview on the market for alternative data with respect to new-to-credit consumers. This analysis details the financial opportunity associated with Gen Z and Gen Alpha banking customers.</p>
+          <span class="research-date">November 2024</span>
+        </div>
+      </a>
 
+      <a class="research-card" href="/files/legalTech.pdf" target="_blank">
+        <div class="research-image">
+          <img src="/images/legal.png" alt="Legal AI">
+        </div>
+        <div class="research-text">
+          <h3>Legal Technology and Generative AI</h3>
+          <p>Thematic research on the impact of generative AI technology in the legal industry. Exploring the technology trends in application software for legal services businesses.</p>
+          <span class="research-date">June 2024</span>
+        </div>
+      </a>
+    </div>
 
+  </main>
 
-	</body>
+  <footer>
+    <span class="footer-left">govindanand.github.io</span>
+    <ul class="footer-links">
+      <li><a href="mailto:vinanand.va@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/vinanand/" target="_blank">LinkedIn</a></li>
+      <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a></li>
+    </ul>
+  </footer>
+
+</body>
 </html>
