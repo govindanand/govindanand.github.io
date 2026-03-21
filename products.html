@@ -547,11 +547,25 @@
 <footer>
   <span class="footer-left">govindanand.github.io</span>
   <ul class="footer-links">
-    <li><a href="/cdn-cgi/l/email-protection#9bedf2f5faf5faf5ffb5edfadbfcf6faf2f7b5f8f4f6">Email</a></li>
+    <li><a href="mailto:vinanand.va@gmail.com">Email</a></li>
     <li><a href="https://www.linkedin.com/in/vinanand/" target="_blank">LinkedIn</a></li>
     <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a></li>
   </ul>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const
+<script>
+  const buttons = document.querySelectorAll('.tab-btn');
+  const panels  = document.querySelectorAll('.tab-panel');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      panels.forEach(p  => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
