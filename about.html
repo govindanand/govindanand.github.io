@@ -188,7 +188,17 @@
       .entry-inner {
         grid-template-columns: 1fr;
       }
-      .entry-media { display: none; }
+      .entry-media {
+        width: 100%;
+        max-height: 200px;
+        overflow: hidden;
+      }
+      .entry-media img,
+      .entry-media video {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
     }
 
     /* ── MEDIA ── */
@@ -441,11 +451,6 @@
   <footer>
     <span class="footer-left">govindanand.github.io</span>
     <ul class="footer-links">
-      <li><a href="mailto:vinanand.va@gmail.com">Email</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#c5b3acaba4aba4aba1ebb3a485a2a8a4aca9eba6aaa8">Email</a></li>
       <li><a href="https://www.linkedin.com/in/vinanand/" target="_blank">LinkedIn</a></li>
-      <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a></li>
-    </ul>
-  </footer>
-
-</body>
-</html>
+      <li><a href="/files/ResumeVin.pdf" target="_blank">CV</a><
