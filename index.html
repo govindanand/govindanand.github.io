@@ -254,6 +254,82 @@
       color: var(--text-secondary);
     }
 
+    /* ── WRITING ── */
+    .writing-section {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.5rem 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 560px) {
+      .writing-section { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    .writing-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding-top: 2px;
+    }
+
+    .writing-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .writing-item {
+      display: flex;
+      flex-direction: row;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .writing-item img {
+      width: 160px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .writing-item-body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .writing-item-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .writing-item-title:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .writing-item-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    .writing-item-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -320,7 +396,7 @@
     <ul class="nav-links">
       <li><a href="/about.html">About</a></li>
       <li><a href="/products.html">Products</a></li>
-      <li><a href="/blog.html">Venture Capital</a></li>
+      <li><a href="/blog.html">Writing</a></li>
     </ul>
   </nav>
 
@@ -328,23 +404,23 @@
     <div class="hero">
 
       <div class="hero-text">
-        <p class="hero-eyebrow">Technology investor &amp; product builder</p>
+        <p class="hero-eyebrow">Behavioral AI Research &amp; Product Builder</p>
 
         <h1>Hi, I'm <em>Vin</em></h1>
 
         <p>
-          I'm a technology investor at <a href="https://capitaloneventures.com/" target="_blank">Capital One Ventures</a> and a former product manager on the AI/ML platform team at Capital One. Berkeley EECS &amp; Materials Science. I'm interested in machine learning infrastructure, personalized experiences, and the startups building them.
+          I'm a Member of Technical Staff at <a href="https://patronus.ai/" target="_blank">Patronus AI</a>, where I research how frontier models perform across professional work domains and build the training data pipelines that push their limits. I've built out this product line from scratch, drawing on my background working at large enterprises.
         </p>
 
         <p>
-          Previously built real-time data systems driving decisioning for 100M+ customers. Drop me a note if you'd like to chat about new startups, ML research, or indie rock.
+          Previously a technology investor at <a href="https://capitaloneventures.com/" target="_blank">Capital One Ventures</a> and PM on the AI/ML platform team at Capital One. Berkeley EECS &amp; Materials Science. Drop me a note if you'd like to talk about frontier AI, enterprise data, or indie rock.
         </p>
 
         <div class="tag-row">
-          <span class="tag">AI/ML</span>
-          <span class="tag">Venture Capital</span>
+          <span class="tag">Sovereign AI</span>
+          <span class="tag">AI Training Data</span>
           <span class="tag">Product</span>
-          <span class="tag">Materials Science</span>
+          <span class="tag">Venture Capital</span>
         </div>
 
         <div class="cta-row">
@@ -366,6 +442,10 @@
       <span class="current-label">Currently</span>
       <div class="current-items">
         <div class="current-item">
+          <span class="current-item-title">Member of Technical Staff</span>
+          <span class="current-item-sub">Patronus AI — Knowledge work research, Strategic Projects Lead</span>
+        </div>
+        <div class="current-item">
           <span class="current-item-title">Investor, Enterprise Technology</span>
           <span class="current-item-sub">Capital One Ventures — AI/ML, Agentic systems, Data and Infrastructure</span>
         </div>
@@ -376,6 +456,24 @@
         <div class="current-item">
           <span class="current-item-title">Musician</span>
           <span class="current-item-sub"><a href="https://open.spotify.com/artist/5mRlDRVITFlgc4QVBvGVul" target="_blank" style="color:var(--text-primary);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--border-strong);">The Modern Garage</a> on Spotify · 12 years Carnatic training</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="writing-section">
+      <span class="writing-label">Writing</span>
+      <div class="writing-items">
+        <div class="writing-item">
+          <a href="https://www.patronus.ai/blog/right-expert-for-ai" target="_blank">
+            <img src="https://cdn.prod.website-files.com/6ad02cfe6aeeb435b9c4e0ec/6ae926c9806a4c526f494a0b_6ae9262d1831ed2eba21ce56_p26-blog-right-expert-for-ai-header.jpeg" alt="Who Is the Right Expert for AI?">
+          </a>
+          <div class="writing-item-body">
+            <a class="writing-item-title" href="https://www.patronus.ai/blog/right-expert-for-ai" target="_blank">Who Is the Right Expert for AI?</a>
+            <span class="writing-item-meta">Patronus AI Blog · 2024</span>
+            <p class="writing-item-desc">Why building effective AI training data means sampling experts across roles and seniority levels — not just the most credentialed practitioners. On long-horizon tasks, contextual judgment, and what real expertise looks like in professional AI workflows.</p>
+          </div>
         </div>
       </div>
     </div>
